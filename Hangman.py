@@ -46,4 +46,5 @@ with open("word_library.txt", "r") as file:
 
 word = random.choice(words)
 hangman(word)
+#words py is gone
 
