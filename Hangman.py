@@ -30,6 +30,7 @@ def hangman(word):
         print((" ".join(board)))
         e = wrong + 1
         print("\n".join(stages[0: e]))
+        print("".join(["   " + ch for ch in board]))
         if "_" not in board:
             print("Good job, that was easy though!")
             print(" ".join(board))
@@ -46,5 +47,7 @@ with open("word_library.txt", "r") as file:
 
 word = random.choice(words)
 hangman(word)
+
+#This should only go to dev
 
 
