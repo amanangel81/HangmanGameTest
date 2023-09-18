@@ -46,7 +46,7 @@ def hangman(word):
         print("".join(["   " + ch for ch in board]))
 
         if "_" not in board:
-            print("Good job, that was easy though!")
+            print("Good job, that was way to was easy though!")
             print(" ".join(board))
             win = True
             break
