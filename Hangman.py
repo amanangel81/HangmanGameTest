@@ -1,4 +1,3 @@
-#This test change should be mergeable from Dev to Main
 import random
 
 # Constants for hangman stages
@@ -13,21 +12,21 @@ STAGES = [
     "|"
 ]
 
-
+# Function to retrieve a random word from the word library
 def get_random_word(filename="word_library.txt"):
     """Retrieve a random word from the word library."""
     with open(filename, "r") as file:
         words = [line.strip().lower() for line in file]
     return random.choice(words)
 
-
+# Function to play hangman
 def hangman(word):
     wrong = 0
     rletters = list(word)
     board = ["_"] * len(word)
     win = False
 
-    print("Welcome to Hangman Everyone, This is updated to latest")
+    print("Welcome to Hangman")
 
     while wrong < len(STAGES) - 1:
         print("\n")
@@ -47,7 +46,7 @@ def hangman(word):
         print("".join(["   " + ch for ch in board]))
 
         if "_" not in board:
-            print("Good job, that was way to was easy though!")
+            print("Good job, that was easy though!")
             print(" ".join(board))
             win = True
             break
@@ -56,8 +55,9 @@ def hangman(word):
         print("\n".join(STAGES[:wrong]))
         print(f"Try again fam! It was {word}.")
 
-
+# Entry point of the program
 if __name__ == "__main__":
     # Resolve the conflict by choosing one branch's version of this block
+    # Get a random word and start the hangman game
     random_word = get_random_word()
     hangman(random_word)
