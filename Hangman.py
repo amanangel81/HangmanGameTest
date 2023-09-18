@@ -1,3 +1,4 @@
+#This test change should be mergeable from Dev to Main
 import random
 
 # Constants for hangman stages
@@ -26,7 +27,7 @@ def hangman(word):
     board = ["_"] * len(word)
     win = False
 
-    print("Welcome to Hangman")
+    print("Welcome to Hangman Everyone, This is updated to latest")
 
     while wrong < len(STAGES) - 1:
         print("\n")
