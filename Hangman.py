@@ -57,5 +57,6 @@ def hangman(word):
 
 
 if __name__ == "__main__":
+    # Resolve the conflict by choosing one branch's version of this block
     random_word = get_random_word()
     hangman(random_word)
