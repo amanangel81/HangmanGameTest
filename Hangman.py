@@ -20,6 +20,7 @@ def get_random_word(filename="word_library.txt"):
     return random.choice(words)  # Use choice from random
 
 # Function to display the guessed letters board
+#This needs to push fully not working right now
 def display_guessed_letters(guessed_letters):
     """Display the guessed letters board."""
     print("Guessed Letters: " + " ".join(guessed_letters))
