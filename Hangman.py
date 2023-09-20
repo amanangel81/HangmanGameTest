@@ -1,4 +1,4 @@
-import random
+import random  # Import the random module
 
 # Constants for hangman stages
 STAGES = [
@@ -17,7 +17,7 @@ def get_random_word(filename="word_library.txt"):
     """Retrieve a random word from the word library."""
     with open(filename, "r") as file:
         words = [line.strip().lower() for line in file]
-    return random.choice(words)
+    return random.choice(words)  # Use choice from random
 
 # Function to play hangman
 def hangman(word):
@@ -33,13 +33,17 @@ def hangman(word):
         msg = "Good luck guessing: "
         char = input(msg)
 
-        if char in rletters:
-            cind = rletters.index(char)
-            board[cind] = char
-            rletters[cind] = '$'
+        # Modified section to handle repeating letters
+        found_indices = [i for i, letter in enumerate(rletters) if letter == char]
+
+        if found_indices:
+            for index in found_indices:
+                board[index] = char
+                rletters[index] = '$'
         else:
             wrong += 1
 
+        # Rest of the code remains unchanged
         print(" ".join(board))
         e = wrong + 1
         print("\n".join(STAGES[:e]))
@@ -57,7 +61,6 @@ def hangman(word):
 
 # Entry point of the program
 if __name__ == "__main__":
-    # Resolve the conflict by choosing one branch's version of this block
     # Get a random word and start the hangman game
     random_word = get_random_word()
     hangman(random_word)
