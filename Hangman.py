@@ -19,19 +19,32 @@ def get_random_word(filename="word_library.txt"):
         words = [line.strip().lower() for line in file]
     return random.choice(words)  # Use choice from random
 
+# Function to display the guessed letters board
+def display_guessed_letters(guessed_letters):
+    """Display the guessed letters board."""
+    print("Guessed Letters: " + " ".join(guessed_letters))
+
 # Function to play hangman
 def hangman(word):
     wrong = 0
     rletters = list(word)
     board = ["_"] * len(word)
+    guessed_letters = []
     win = False
 
     print("Welcome to Hangman")
 
     while wrong < len(STAGES) - 1:
         print("\n")
+        display_guessed_letters(guessed_letters)
         msg = "Good luck guessing: "
-        char = input(msg)
+        char = input(msg).lower()  # Convert input to lowercase for case-insensitive comparison
+
+        if char in guessed_letters:
+            print("You already guessed that letter. Try again.")
+            continue
+
+        guessed_letters.append(char)
 
         # Modified section to handle repeating letters
         found_indices = [i for i, letter in enumerate(rletters) if letter == char]
