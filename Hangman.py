@@ -42,7 +42,7 @@ def hangman(word):
         char = input(msg).lower()  # Convert input to lowercase for case-insensitive comparison
 
         if char in guessed_letters:
-            print("You already guessed that letter. Try again.")
+            print("You already guessed that letter duh. Try again.")
             continue
 
         guessed_letters.append(char)
@@ -64,14 +64,14 @@ def hangman(word):
         print("".join(["   " + ch for ch in board]))
 
         if "_" not in board:
-            print("Good job, that was easy though!")
+            print("Good job!!, that was easy though lol!")
             print(" ".join(board))
             win = True
             break
 
     if not win:
         print("\n".join(STAGES[:wrong]))
-        print(f"Try again fam! It was {word}.")
+        print(f"Try again Dawg, sorry lol! It was {word}.")
 
 # Entry point of the program
 if __name__ == "__main__":
