@@ -42,7 +42,7 @@ def hangman(word):
         char = input(msg).lower()  # Convert input to lowercase for case-insensitive comparison
 
         if char in guessed_letters:
-            print("You already guessed that letter. Try again.")
+            print("You already guessed that letter duh. Try again.")
             continue
 
         guessed_letters.append(char)
