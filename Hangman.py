@@ -71,7 +71,7 @@ def hangman(word):
 
     if not win:
         print("\n".join(STAGES[:wrong]))
-        print(f"Try again fam! It was {word}.")
+        print(f"Try again Dawg, sorry lol! It was {word}.")
 
 # Entry point of the program
 if __name__ == "__main__":
